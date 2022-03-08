@@ -1,0 +1,52 @@
+1st line- package declaration: create an executable or library 
+	$package main
+
+2nd line- import statement: bring in and use code from other packages. Use " ". 
+	$import "fmt" #importing the fmt package
+
+* 	$go build main.go
+	$./ main
+
+* $go run main.go
+
+*Functions:
+	$func [name] (){
+		fmt.Println("Hello World")}
+
+*Importing multiple packages:
+	More packages: https://pkg.go.dev/std
+	$import (
+		"package1"
+		"package2"
+	)#each package is seperated by LINE, not by any special characters.
+
+	$import (
+	p1 "package1") #p1 is an ALIAS.
+	
+*Comments
+	$// This is a comment
+	$/* This is a block comment */
+
+*Go Resources: https://go.dev/
+	$go doc [package_name]
+	$go doc fmt.Println
+
+*Values and Variables:
+	1. Literals: numbers, strings, etc.
+		- add (+), substract (-), multiply (*), divide (/), remainder (%)
+			$fmt.Println(2*3) //6
+	2. Constants: can't be UPDATED when the program is RUNNING
+		- const
+			$const funcFact = "1+1=2"
+			$fmt.Println(funFact) 
+	3. Data Type: THREE basic catagories for NUMBERS:
+		- int
+		- float
+		- complex
+	4. Basic Numeric Types in Go: 15 different numeric types
+		- https://go.dev/ref/spec#Numeric_types
+	
+	5. Variables: Can change during the running of a program
+		- var [prefered_name] [type]
+		$var lengthOfSong uint16
+	6. Reading Errors
