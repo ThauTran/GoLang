@@ -1,3 +1,15 @@
+Source: codecademy.com
+Course: Learn Go
+Year  : 2022
+
+Guideline:
+Toic	:Line_number
+Basic	:13
+
+
+
+
+---------------
 1st line- package declaration: create an executable or library 
 	$package main
 
@@ -50,3 +62,18 @@
 		- var [prefered_name] [type]
 		$var lengthOfSong uint16
 	6. Reading Errors
+		- Format: ./[package_name]:[line_number]:[column_number]
+		- Example:./main.go:4:7: numberWheels declared and not used
+	7. Assigning Variables:
+		- Variables are placeholder names
+		- updating variables is called ASSIGNING a value to variable
+		- Use "=" to assign value to variable
+		- Example: 
+			$var kilometersToMars int32 //declaring to variable
+			$kilometerToMars = 62100000 // assigning value to that variable
+		- OR: $var kilometersToMars int32= = 61200000
+*String: 
+	-
+			   
+		
+		
