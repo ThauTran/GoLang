@@ -70,23 +70,23 @@ Basic	:13
 		- Use "=" to assign value to variable
 		- Example: 
 			$var kilometersToMars int32 //declaring to variable
-			$kilometerToMars = 62100000 // assigning value to that variable
+			$kilometerToMars = 62100000 //assigning value to that variable
 		- OR: $var kilometersToMars int32= = 61200000
 *String: 
 	- A signe quote ' cannot be used to define strings.
 	$var myfavoriteFood string = "Pho"
-	$fmt.Println("My favorite food is " + myfavoriteFood) \\My favorite food is Pho
+	$fmt.Println("My favorite food is " + myfavoriteFood) //My favorite food is Pho
 	
 *Zero Values:
 	- All numeric var have a value of 0 BEFORE assignment
 		$var emptyFloat float32 
-		$fmt.Println(emptyFloat) \\0
+		$fmt.Println(emptyFloat) //0
 	- String var have a default value of "" - empty string
 	- Boolean var have a default value of FALSE
 
 *Inferring Type:
 	- := is used to create the var and infer its type based on the VALUE PROVIDE
-		$workTomorrow := true \\boolean value assigned
+		$workTomorrow := true //boolean value assigned
 	- There are two ways of inferring type:
 		1.$friendName := "Trannnn"
 		2.$var friendName = "Trannnn"
@@ -104,7 +104,7 @@ Basic	:13
 		$command := "Hold"
 		$person := "me!"
 		$command += person
-		$fmt.Println (command) \\ Hold me!
+		$fmt.Println (command) //Hold me!
 		--------------
 	Example 2:
 		$coolSneakers := 65.99
@@ -118,6 +118,6 @@ Basic	:13
 		$fmt.Println("Purchase of", coolSneakers + niceNecklace, "with 8.875% sales tax", taxCalculation, "equal to", coolSneakers + niceNecklace + taxCalculation)
 
 * Multiple var Declaration:
-	$var part1, part2 string \\both are strings
-	$quote, fact := "The sun is bigger than the moon", true \\string, boolean
+	$var part1, part2 string //both are strings
+	$quote, fact := "The sun is bigger than the moon", true //string, boolean
 
