@@ -3,30 +3,49 @@ Course: Learn Go
 Year  : 2022
 
 Guideline:
-Toic	:Line_number
-Basic	:13
-
-
+Toic------------------------------------:Line_number
+1. Get started--------------------------:13
+	1.1. Basic			:
+	1.2. Execute 1			:
+	1.3. Execite 2			:
+	1.4. Functions			:
+	1.5. Packages			:
+	1.6. Comments			:
+2. Variables, Value and Formatting------:
+	2.1. Literals			:
+	2.2. Constants			:
+	2.3. Data Type			:
+	2.4. Numeric Types		:
+	2.5. Variables			:
+	2.6. Reading Errors		:
+	2.7. Assigning Variables	:
+	2.8. String			:
+	2.9. Zero values		:
+	2.10.Inferring Type		:
+	2.11.Updating Variables		:
+	2.12.Multuple Var Declaration	:
+3. FMT Package--------------------------:
 
 
 ---------------
 1. Get started:
-	1st line- package declaration: create an executable or library 
-		$package main
+--	1. Basic:
+		1st line- package declaration: create an executable or library 
+			$package main
 
-	2nd line- import statement: bring in and use code from other packages. Use " ". 
-		$import "fmt" #importing the fmt package
+		2nd line- import statement: bring in and use code from other packages. Use " ". 
+			$import "fmt" #importing the fmt package
 
-	* 	$go build main.go
+--	2. 	$go build main.go
 		$./ main
 
-	* $go run main.go
+--	3. $go run main.go
 
-	*Functions:
+--	4. Functions:
 		$func [name] (){
 			fmt.Println("Hello World")}
 
-	*Importing multiple packages:
+--	5. Importing multiple packages:
 		More packages: https://pkg.go.dev/std
 		$import (
 			"package1"
@@ -36,36 +55,41 @@ Basic	:13
 		$import (
 		p1 "package1") #p1 is an ALIAS.
 
-	*Comments
+--	6. Comments
 		$// This is a comment
 		$/* This is a block comment */
 
-	*Go Resources: https://go.dev/
+	8. Go Resources: https://go.dev/
 		$go doc [package_name]
 		$go doc fmt.Println
 
-2. Values and Variables:
-	1. Literals: numbers, strings, etc.
+2. Variables, Value and Formatting:
+--	1. Literals: numbers, strings, etc.
 		- add (+), substract (-), multiply (*), divide (/), remainder (%)
 			$fmt.Println(2*3) //6
-	2. Constants: can't be UPDATED when the program is RUNNING
+	
+--	2. Constants: can't be UPDATED when the program is RUNNING
 		- const
 			$const funcFact = "1+1=2"
 			$fmt.Println(funFact) 
-	3. Data Type: THREE basic catagories for NUMBERS:
+	
+--	3. Data Type: THREE basic catagories for NUMBERS:
 		- int
 		- float
 		- complex
-	4. Basic Numeric Types in Go: 15 different numeric types
+	
+--	4. Basic Numeric Types in Go: 15 different numeric types
 		- https://go.dev/ref/spec#Numeric_types
 	
-	5. Variables: Can change during the running of a program
+--	5. Variables: Can change during the running of a program
 		- var [prefered_name] [type]
 		$var lengthOfSong uint16
-	6. Reading Errors
+	
+--	6. Reading Errors
 		- Format: ./[package_name]:[line_number]:[column_number]
 		- Example:./main.go:4:7: numberWheels declared and not used
-	7. Assigning Variables:
+	
+--	7. Assigning Variables:
 		- Variables are placeholder names
 		- updating variables is called ASSIGNING a value to variable
 		- Use "=" to assign value to variable
@@ -73,19 +97,20 @@ Basic	:13
 			$var kilometersToMars int32 //declaring to variable
 			$kilometerToMars = 62100000 //assigning value to that variable
 		- OR: $var kilometersToMars int32= = 61200000
-	8. String: 
+	
+--	8. String: 
 		- A signe quote ' cannot be used to define strings.
 		$var myfavoriteFood string = "Pho"
 		$fmt.Println("My favorite food is " + myfavoriteFood) //My favorite food is Pho
 
-	9. Zero Values:
+--	9. Zero Values:
 		- All numeric var have a value of 0 BEFORE assignment
 			$var emptyFloat float32 
 			$fmt.Println(emptyFloat) //0
 		- String var have a default value of "" - empty string
 		- Boolean var have a default value of FALSE
 
-	10. Inferring Type:
+--	10. Inferring Type:
 		- := is used to create the var and infer its type based on the VALUE PROVIDE
 			$workTomorrow := true //boolean value assigned
 		- There are two ways of inferring type:
@@ -93,10 +118,10 @@ Basic	:13
 			2.$var friendName = "Trannnn"
 		- Checking type: fmt.Printf("Type is: %T", [variable]) 
 
-	11. Default int Type:
+--	11. Default int Type:
 		- int vs. uint (unsigned integer)
 
-	12. Updating Variables:
+--	12. Updating Variables:
 		- +=: to add from the var
 		- -+: to substract from the var
 		- *=: to multiply the var by a factor
@@ -118,12 +143,12 @@ Basic	:13
 			$taxCalculation *= 0.08875
 			$fmt.Println("Purchase of", coolSneakers + niceNecklace, "with 8.875% sales tax", taxCalculation, "equal to", coolSneakers + niceNecklace + taxCalculation)
 
-	13. Multiple var Declaration:
+--	13. Multiple var Declaration:
 		$var part1, part2 string //both are strings
 		$quote, fact := "The sun is bigger than the moon", true //string, boolean
 
 3. FMT Package:
-	1. The Print method:
+--	1. The Print method:
 		$fmt.Println() //Print in line, line break
 		$fmt.Print() //No line break
 			-Example 1:
@@ -133,7 +158,7 @@ Basic	:13
 			$fmt.Print("How","are","you?") //Howareyou?
 			$fmt.Println("How", "are", "you?") //How are you?
 	
-	2. The Prinf method with %v:
+--	2. The Prinf method with %v:
 		- %v is a place holder - verb in Golang
 		Example:
 			$food := "Pho"
@@ -141,7 +166,7 @@ Basic	:13
 			$fmt.Printf("Your %v costs %v", food, price) //Your Pho costs $12.99
 			//If we swap the arguemtns: pho and price, the result will change.
 
-	3. Different Verbs:
+--	3. Different Verbs:
 		- Different other verbs: https://pkg.go.dev/fmt#hdr-Printing
 		- %T - checking the type of selected agurment
 			$floatExample := 1.75
@@ -153,10 +178,24 @@ Basic	:13
 		- %f - can limit how percise we want the value to be 
 		- %.2f - 2 decimal point (price)
 	
-	4. Sprint and Sprintln:
+--	4. Sprint and Sprintln:
 		- These methods fmt.Sprint()-no space- & fmt.Sprintln()-inclusing space- format not print out the statement
 			$name:= "Tran"
 			$iSay := fmt.Sprint("This is ", name)
 			$fmt.Print(iSay) //This is Tran
-	5. Srpintf:
-		- 
+	
+--	5. Srpintf method:
+		- Works as the Printf method
+		
+--	6. Getting User Input:
+		- fmt.Scan(): allows to get user input
+		Example:
+			$var response1 string 
+			$var response2 string 
+			$fmt.Scan(&response1)
+			$fmt.Scan(&response2)
+			$fmt.Printf("I'm %v %v", response1, response2)
+
+4. Conditionals
+--	1. 
+	
