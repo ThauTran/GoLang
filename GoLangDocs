@@ -10,40 +10,41 @@ Basic	:13
 
 
 ---------------
-1st line- package declaration: create an executable or library 
-	$package main
+1. Get started:
+	1st line- package declaration: create an executable or library 
+		$package main
 
-2nd line- import statement: bring in and use code from other packages. Use " ". 
-	$import "fmt" #importing the fmt package
+	2nd line- import statement: bring in and use code from other packages. Use " ". 
+		$import "fmt" #importing the fmt package
 
-* 	$go build main.go
-	$./ main
+	* 	$go build main.go
+		$./ main
 
-* $go run main.go
+	* $go run main.go
 
-*Functions:
-	$func [name] (){
-		fmt.Println("Hello World")}
+	*Functions:
+		$func [name] (){
+			fmt.Println("Hello World")}
 
-*Importing multiple packages:
-	More packages: https://pkg.go.dev/std
-	$import (
-		"package1"
-		"package2"
-	)#each package is seperated by LINE, not by any special characters.
+	*Importing multiple packages:
+		More packages: https://pkg.go.dev/std
+		$import (
+			"package1"
+			"package2"
+		)#each package is seperated by LINE, not by any special characters.
 
-	$import (
-	p1 "package1") #p1 is an ALIAS.
-	
-*Comments
-	$// This is a comment
-	$/* This is a block comment */
+		$import (
+		p1 "package1") #p1 is an ALIAS.
 
-*Go Resources: https://go.dev/
-	$go doc [package_name]
-	$go doc fmt.Println
+	*Comments
+		$// This is a comment
+		$/* This is a block comment */
 
-*Values and Variables:
+	*Go Resources: https://go.dev/
+		$go doc [package_name]
+		$go doc fmt.Println
+
+2. Values and Variables:
 	1. Literals: numbers, strings, etc.
 		- add (+), substract (-), multiply (*), divide (/), remainder (%)
 			$fmt.Println(2*3) //6
@@ -72,52 +73,90 @@ Basic	:13
 			$var kilometersToMars int32 //declaring to variable
 			$kilometerToMars = 62100000 //assigning value to that variable
 		- OR: $var kilometersToMars int32= = 61200000
-*String: 
-	- A signe quote ' cannot be used to define strings.
-	$var myfavoriteFood string = "Pho"
-	$fmt.Println("My favorite food is " + myfavoriteFood) //My favorite food is Pho
+	8. String: 
+		- A signe quote ' cannot be used to define strings.
+		$var myfavoriteFood string = "Pho"
+		$fmt.Println("My favorite food is " + myfavoriteFood) //My favorite food is Pho
+
+	9. Zero Values:
+		- All numeric var have a value of 0 BEFORE assignment
+			$var emptyFloat float32 
+			$fmt.Println(emptyFloat) //0
+		- String var have a default value of "" - empty string
+		- Boolean var have a default value of FALSE
+
+	10. Inferring Type:
+		- := is used to create the var and infer its type based on the VALUE PROVIDE
+			$workTomorrow := true //boolean value assigned
+		- There are two ways of inferring type:
+			1.$friendName := "Trannnn"
+			2.$var friendName = "Trannnn"
+		- Checking type: fmt.Printf("Type is: %T", [variable]) 
+
+	11. Default int Type:
+		- int vs. uint (unsigned integer)
+
+	12. Updating Variables:
+		- +=: to add from the var
+		- -+: to substract from the var
+		- *=: to multiply the var by a factor
+		- /= to divide the var by a dividend
+		Example1
+			$command := "Hold"
+			$person := "me!"
+			$command += person
+			$fmt.Println (command) //Hold me!
+			--------------
+		Example 2:
+			$coolSneakers := 65.99
+			$niceNecklace := 45.50
+			$var taxCalculation float64
+			$taxCalculation += coolSneakers
+			$taxCalculation += niceNecklace
+			// Compute the NYC sales tax
+			// 8.875% of the purchase here:
+			$taxCalculation *= 0.08875
+			$fmt.Println("Purchase of", coolSneakers + niceNecklace, "with 8.875% sales tax", taxCalculation, "equal to", coolSneakers + niceNecklace + taxCalculation)
+
+	13. Multiple var Declaration:
+		$var part1, part2 string //both are strings
+		$quote, fact := "The sun is bigger than the moon", true //string, boolean
+
+3. FMT Package:
+	1. The Print method:
+		$fmt.Println() //Print in line, line break
+		$fmt.Print() //No line break
+			-Example 1:
+			$fmt.Print("Hello! ")
+			$fmt.Print("How are you?") //Hello! How are you?
+			-Example 2:
+			$fmt.Print("How","are","you?") //Howareyou?
+			$fmt.Println("How", "are", "you?") //How are you?
 	
-*Zero Values:
-	- All numeric var have a value of 0 BEFORE assignment
-		$var emptyFloat float32 
-		$fmt.Println(emptyFloat) //0
-	- String var have a default value of "" - empty string
-	- Boolean var have a default value of FALSE
+	2. The Prinf method with %v:
+		- %v is a place holder - verb in Golang
+		Example:
+			$food := "Pho"
+			$price := "$12.99"
+			$fmt.Printf("Your %v costs %v", food, price) //Your Pho costs $12.99
+			//If we swap the arguemtns: pho and price, the result will change.
 
-*Inferring Type:
-	- := is used to create the var and infer its type based on the VALUE PROVIDE
-		$workTomorrow := true //boolean value assigned
-	- There are two ways of inferring type:
-		1.$friendName := "Trannnn"
-		2.$var friendName = "Trannnn"
-	- Checking type: fmt.Printf("Type is: %T", [variable]) 
-
-*Default int Type:
-	- int vs. uint (unsigned integer)
-
-*Updating Variables:
-	- +=: to add from the var
-	- -+: to substract from the var
-	- *=: to multiply the var by a factor
-	- /= to divide the var by a dividend
-	Example1
-		$command := "Hold"
-		$person := "me!"
-		$command += person
-		$fmt.Println (command) //Hold me!
-		--------------
-	Example 2:
-		$coolSneakers := 65.99
-		$niceNecklace := 45.50
-		$var taxCalculation float64
-		$taxCalculation += coolSneakers
-		$taxCalculation += niceNecklace
-		// Compute the NYC sales tax
-		// 8.875% of the purchase here:
-		$taxCalculation *= 0.08875
-		$fmt.Println("Purchase of", coolSneakers + niceNecklace, "with 8.875% sales tax", taxCalculation, "equal to", coolSneakers + niceNecklace + taxCalculation)
-
-* Multiple var Declaration:
-	$var part1, part2 string //both are strings
-	$quote, fact := "The sun is bigger than the moon", true //string, boolean
-
+	3. Different Verbs:
+		- Different other verbs: https://pkg.go.dev/fmt#hdr-Printing
+		- %T - checking the type of selected agurment
+			$floatExample := 1.75
+			$fmt.Println("Working with a %T", floatExample) //Working with a float64
+		- %d - interpolating a number into a string 
+			$month := 01
+			$year := 1997
+			$fmt.Printf("I was born in %d/%d") //I was born in 01/1997
+		- %f - can limit how percise we want the value to be 
+		- %.2f - 2 decimal point (price)
+	
+	4. Sprint and Sprintln:
+		- These methods fmt.Sprint()-no space- & fmt.Sprintln()-inclusing space- format not print out the statement
+			$name:= "Tran"
+			$iSay := fmt.Sprint("This is ", name)
+			$fmt.Print(iSay) //This is Tran
+	5. Srpintf:
+		- 
