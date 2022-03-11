@@ -1,10 +1,14 @@
-Source: codecademy.com
-Course: Learn Go
-Year  : 2022
-
-Guideline:
-Toic------------------------------------:Line_number
-1. Get started--------------------------:13
+Source					: codecademy.com
+Course					: Learn Go
+Year  					: 2022
+----------------------------------------:
+Guideline
+1. The sentence start with "$" indicates CODE
+2. "---" indicates the header
+3. "*****" indicates important note
+----------------------------------------:
+Topic-----------------------------------: Line_number
+1. Get started--------------------------: 13
 	1.1. Basic			:
 	1.2. Execute 1			:
 	1.3. Execite 2			:
@@ -25,27 +29,41 @@ Toic------------------------------------:Line_number
 	2.11.Updating Variables		:
 	2.12.Multuple Var Declaration	:
 3. FMT Package--------------------------:
-
-
+	3.1. The Print method		:
+	3.2. The Prinf method with %v	:
+	3.3. Different Verbs		:
+	3.4. Sprint and Sprintln	:
+	3.5. Srpintf method		:
+	3.6. Getting User Input		:
+4. Conditionals-------------------------:
+	4.1. The if Statement		:
+	4.2. The else statement		:
+	4.3. The else if statement	:	
+	4.4. The switch statement	:
+	4.5. Comparison Operators	:
+	4.6. Logical Operators (And, Or):
+	4.7. Scoped Short Declaration 	:
+	4.8. Randomizing		:
+	4.9. Seeding			:
 ---------------
 1. Get started:
---	1. Basic:
+---	1. Basic:
 		1st line- package declaration: create an executable or library 
 			$package main
 
 		2nd line- import statement: bring in and use code from other packages. Use " ". 
 			$import "fmt" #importing the fmt package
 
---	2. 	$go build main.go
+---	2. 	$go build main.go
 		$./ main
 
---	3. $go run main.go
+---	3. $go run main.go
 
---	4. Functions:
+---	4. Functions:
 		$func [name] (){
 			fmt.Println("Hello World")}
 
---	5. Importing multiple packages:
+---	5. Importing multiple packages:
 		More packages: https://pkg.go.dev/std
 		$import (
 			"package1"
@@ -55,7 +73,7 @@ Toic------------------------------------:Line_number
 		$import (
 		p1 "package1") #p1 is an ALIAS.
 
---	6. Comments
+---	6. Comments
 		$// This is a comment
 		$/* This is a block comment */
 
@@ -64,32 +82,32 @@ Toic------------------------------------:Line_number
 		$go doc fmt.Println
 
 2. Variables, Value and Formatting:
---	1. Literals: numbers, strings, etc.
+---	1. Literals: numbers, strings, etc.
 		- add (+), substract (-), multiply (*), divide (/), remainder (%)
 			$fmt.Println(2*3) //6
 	
---	2. Constants: can't be UPDATED when the program is RUNNING
+---	2. Constants: can't be UPDATED when the program is RUNNING
 		- const
 			$const funcFact = "1+1=2"
 			$fmt.Println(funFact) 
 	
---	3. Data Type: THREE basic catagories for NUMBERS:
+---	3. Data Type: THREE basic catagories for NUMBERS:
 		- int
 		- float
 		- complex
 	
---	4. Basic Numeric Types in Go: 15 different numeric types
+---	4. Basic Numeric Types in Go: 15 different numeric types
 		- https://go.dev/ref/spec#Numeric_types
 	
---	5. Variables: Can change during the running of a program
+---	5. Variables: Can change during the running of a program
 		- var [prefered_name] [type]
 		$var lengthOfSong uint16
 	
---	6. Reading Errors
+---	6. Reading Errors
 		- Format: ./[package_name]:[line_number]:[column_number]
 		- Example:./main.go:4:7: numberWheels declared and not used
 	
---	7. Assigning Variables:
+---	7. Assigning Variables:
 		- Variables are placeholder names
 		- updating variables is called ASSIGNING a value to variable
 		- Use "=" to assign value to variable
@@ -98,19 +116,19 @@ Toic------------------------------------:Line_number
 			$kilometerToMars = 62100000 //assigning value to that variable
 		- OR: $var kilometersToMars int32= = 61200000
 	
---	8. String: 
+---	8. String: 
 		- A signe quote ' cannot be used to define strings.
 		$var myfavoriteFood string = "Pho"
 		$fmt.Println("My favorite food is " + myfavoriteFood) //My favorite food is Pho
 
---	9. Zero Values:
+---	9. Zero Values:
 		- All numeric var have a value of 0 BEFORE assignment
 			$var emptyFloat float32 
 			$fmt.Println(emptyFloat) //0
 		- String var have a default value of "" - empty string
 		- Boolean var have a default value of FALSE
 
---	10. Inferring Type:
+---	10. Inferring Type:
 		- := is used to create the var and infer its type based on the VALUE PROVIDE
 			$workTomorrow := true //boolean value assigned
 		- There are two ways of inferring type:
@@ -118,10 +136,10 @@ Toic------------------------------------:Line_number
 			2.$var friendName = "Trannnn"
 		- Checking type: fmt.Printf("Type is: %T", [variable]) 
 
---	11. Default int Type:
+---	11. Default int Type:
 		- int vs. uint (unsigned integer)
 
---	12. Updating Variables:
+---	12. Updating Variables:
 		- +=: to add from the var
 		- -+: to substract from the var
 		- *=: to multiply the var by a factor
@@ -143,12 +161,12 @@ Toic------------------------------------:Line_number
 			$taxCalculation *= 0.08875
 			$fmt.Println("Purchase of", coolSneakers + niceNecklace, "with 8.875% sales tax", taxCalculation, "equal to", coolSneakers + niceNecklace + taxCalculation)
 
---	13. Multiple var Declaration:
+---	13. Multiple var Declaration:
 		$var part1, part2 string //both are strings
 		$quote, fact := "The sun is bigger than the moon", true //string, boolean
 
 3. FMT Package:
---	1. The Print method:
+---	1. The Print method:
 		$fmt.Println() //Print in line, line break
 		$fmt.Print() //No line break
 			-Example 1:
@@ -158,7 +176,7 @@ Toic------------------------------------:Line_number
 			$fmt.Print("How","are","you?") //Howareyou?
 			$fmt.Println("How", "are", "you?") //How are you?
 	
---	2. The Prinf method with %v:
+---	2. The Prinf method with %v:
 		- %v is a place holder - verb in Golang
 		Example:
 			$food := "Pho"
@@ -166,7 +184,7 @@ Toic------------------------------------:Line_number
 			$fmt.Printf("Your %v costs %v", food, price) //Your Pho costs $12.99
 			//If we swap the arguemtns: pho and price, the result will change.
 
---	3. Different Verbs:
+---	3. Different Verbs:
 		- Different other verbs: https://pkg.go.dev/fmt#hdr-Printing
 		- %T - checking the type of selected agurment
 			$floatExample := 1.75
@@ -178,16 +196,16 @@ Toic------------------------------------:Line_number
 		- %f - can limit how percise we want the value to be 
 		- %.2f - 2 decimal point (price)
 	
---	4. Sprint and Sprintln:
+---	4. Sprint and Sprintln:
 		- These methods fmt.Sprint()-no space- & fmt.Sprintln()-inclusing space- format not print out the statement
 			$name:= "Tran"
 			$iSay := fmt.Sprint("This is ", name)
 			$fmt.Print(iSay) //This is Tran
 	
---	5. Srpintf method:
+---	5. Srpintf method:
 		- Works as the Printf method
 		
---	6. Getting User Input:
+---	6. Getting User Input:
 		- fmt.Scan(): allows to get user input
 		Example:
 			$var response1 string 
@@ -197,5 +215,52 @@ Toic------------------------------------:Line_number
 			$fmt.Printf("I'm %v %v", response1, response2)
 
 4. Conditionals
---	1. 
-	
+---	1. The if Statement:
+		$if [condition := true] { Result follows by conditions }
+---	2. The else statement:
+		- provide another result based on the conditon
+		$if [condition := true] {Result 1} else {Rersult 2}
+---	3. The else if statement:
+		$if condition1 { Result 1} else if condition2 { Result 2 } else condtion3 { Result 3 }
+---	4. The switch statement:
+		$switch condition {
+		$case "a" or 1:
+		$case "b" or 2: 
+		$default: } 
+---	5. Comparison Operators:
+		- Comparison operators are used to check more than 1 condition
+		- == : Is equal to
+		- != : Is NOT equal to
+		- <  : Less than
+		- >  : Greater than
+		- <= : Less than or equal to
+		- >= : Greater than or equal to
+---	6. Logical Operators (And, Or):
+		- Check multiple conditons
+		- %% : And
+		- || : Or
+		- !  : Not -> negates (reverses) the value of a boolean
+---	7. Scoped Short Declaration Statement:
+		- if statement:
+			$x := 1
+			$y := 2
+			$if product := x * y; product > 1 { fmt. Println ("WOW")} //WOW
+			Error case:
+				$fmt.Println(product) //./main.go:11:13: undefined: product --> product is out of scope
+		- switch statement:
+			$switch season := "summer" ; season {
+			$case "summer":
+			$	fmt.Println("Go out and enjoy the sun!")} 
+---	8. Randomizing:
+		- imporing "math/rand"
+		$fmt.Println(rand.Intn(100)) //If we run the code multiple times, it always return 81
+		Example
+			$amountLeft := rand.Intn(1000)
+			$fmt.Println("amountLeft is: ", amountLeft) //1081
+---	9. Seeding:
+		- By default, the NEW seed value is 1
+		$rand.Seed([passing an integer])
+*****		Random Num:
+			$rand.Seed(time(Now).UnixNano())
+			$randomNumber := rand.Intn(100)
+			$fmt.Println(randomNumber) //it will generate different NUM every time
