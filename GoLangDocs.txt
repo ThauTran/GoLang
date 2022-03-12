@@ -8,14 +8,14 @@ Year  					: 2022
 3. "*****" 				:indicates important note (272)
 ----------------------------------------:
 		  Topic			: Line_number
-1. Get started--------------------------: 13
+1. GET STARTED--------------------------: 13
 	1.1. Basic			:
 	1.2. Execute 1			:
 	1.3. Execite 2			:
 	1.4. Functions			:
 	1.5. Packages			:
 	1.6. Comments			:
-2. Variables, Value and Formatting------:
+2. VARIABLES, VALUE AND FORMATTING------:
 	2.1. Literals			:
 	2.2. Constants			:
 	2.3. Data Type			:
@@ -28,14 +28,14 @@ Year  					: 2022
 	2.10.Inferring Type		:
 	2.11.Updating Variables		:
 	2.12.Multuple Var Declaration	:
-3. FMT Package--------------------------:
+3. FMT PACKAGE--------------------------:
 	3.1. The Print method		:
 	3.2. The Prinf method with %v	:
 	3.3. Different Verbs		:
 	3.4. Sprint and Sprintln	:
 	3.5. Srpintf method		:
 	3.6. Getting User Input		:
-4. Conditionals-------------------------:
+4. CONDITIONALS-------------------------:
 	4.1. The if Statement		:
 	4.2. The else statement		:
 	4.3. The else if statement	:	
@@ -45,8 +45,21 @@ Year  					: 2022
 	4.7. Scoped Short Declaration 	:
 	4.8. Randomizing		:
 	4.9. Seeding			:
+5. FUNCTIONS----------------------------:
+	5.1.
+	5.2.
+	5.3.
+	5.4.
+	5.5.
+	5.6.
+	5.7.
+6. ADDRESSES AND POINTERS---------------:
+	6.1.
+	6.2.
+	6.3.
+	6.4.
 ---------------
-1. Get started:
+1. GET STARTED
 ---	1. Basic:
 		1st line- package declaration: create an executable or library 
 			$package main
@@ -81,7 +94,7 @@ Year  					: 2022
 		$go doc [package_name]
 		$go doc fmt.Println
 
-2. Variables, Value and Formatting:
+2. VARIABLES, VALUES, AND FORMATING
 ---	1. Literals: numbers, strings, etc.
 		- add (+), substract (-), multiply (*), divide (/), remainder (%)
 			$fmt.Println(2*3) //6
@@ -165,7 +178,7 @@ Year  					: 2022
 		$var part1, part2 string //both are strings
 		$quote, fact := "The sun is bigger than the moon", true //string, boolean
 
-3. FMT Package:
+3. FMT PACKAGES
 ---	1. The Print method:
 		$fmt.Println() //Print in line, line break
 		$fmt.Print() //No line break
@@ -215,7 +228,7 @@ Year  					: 2022
 				$fmt.Scan(&response2)
 				$fmt.Printf("I'm %v %v", response1, response2)
 
-4. Conditionals
+4. CONDITIONALS
 ---	1. The if Statement:
 		$if [condition := true] { Result follows by conditions }
 		
@@ -274,7 +287,7 @@ Year  					: 2022
 			$randomNumber := rand.Intn(100)
 			$fmt.Println(randomNumber) //it will generate different NUM every time
 
-5. Functions:
+5. FUNCTIONS
 ---	1. Using Functions:
 		- func [func_name] (parameters?) {do something...}
 		
@@ -337,9 +350,46 @@ Year  					: 2022
 				$	getString, getNum = myExample(2)}
 				$	fmt.Println(getStringm getNum) //Prints: String 2, 20
 				
+---	7. Deferring Resolution:
+		- We can delay a func call to THE END oif the CURRENT SCOPE by using DEFER
+		$defer delayFunction() //the delayFunction will execute at the end
+
+6. ADDRESSES AND POINTERS
+---	1. Usage of pointers & addresses:
+		- The ability to change values from a DIFFERENT SCOPES using: ADDRESSES, POINTERS, DEREFERCING
+		
+---	2. Addresses:
+		- Instead of writting info. down in the memory, it will be SPACE which can be used to store value - ADDRESSES
+		- To find a var's address we use "&" followed by the var name
+			$x := "My very first address"
+			$fmt.Println(&x) //Prints: 0x414020
+			
+---	3. Pointers:
+		- Pointers are used to store value in the specific address
+			$var pointerForInt *int
+				- the "*" signifies that this var will store an address
+				- the "int" means that the address contains an integer value
+			-Example:
+				$star := "Hello"
+				$starAddress := &star
+				$fmt.Println(starAddress) //Prints: 0xc000010230
 				
+---	4. Dereferecing:
+		- We can use our pointer to access the address and change its value. This action is called DEFERECING or INDIRECTING
+			- Example:
+				$lyrics := "Lalala"
+				$pointerForLyrics := &lyrics
+				$*pointerForLyrics = "Hihihi"
+				$fmt.Println(lyrics) //Prints: Hihihi
 				
-				
-				
+---	5.Changing Values in Different Scopes:
+			-Example:
+				$func addHundred (numPtr *int) {
+				$	*numPtr += 100}
+				$func main() {
+				$	x:= 1
+				$	addHundred (&x)
+				$	fmt.Println(x) //Prints 101}		
+----------------------------------------------------------------------------------------------------------------------------------------------------
 				
 				
