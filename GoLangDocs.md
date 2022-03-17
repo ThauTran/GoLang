@@ -1,185 +1,166 @@
-Source					: codecademy.com
-Course					: Learn Go
-Year  					: 2022
-----------------------------------------:
-		Guideline
-1. "$" 					:indicates CODE
-2. "---" 				:indicates the header
-3. "*****" 				:indicates important note (272)
-----------------------------------------:
-		  Topic			: Line_number
-1. GET STARTED--------------------------: 13
-	1.1. Basic			:
-	1.2. Execute 1			:
-	1.3. Execite 2			:
-	1.4. Functions			:
-	1.5. Packages			:
-	1.6. Comments			:
-2. VARIABLES, VALUE AND FORMATTING------:
-	2.1. Literals			:
-	2.2. Constants			:
-	2.3. Data Type			:
-	2.4. Numeric Types		:
-	2.5. Variables			:
-	2.6. Reading Errors		:
-	2.7. Assigning Variables	:
-	2.8. String			:
-	2.9. Zero values		:
-	2.10.Inferring Type		:
-	2.11.Updating Variables		:
-	2.12.Multuple Var Declaration	:
-3. FMT PACKAGE--------------------------:
-	3.1. The Print method		:
-	3.2. The Prinf method with %v	:
-	3.3. Different Verbs		:
-	3.4. Sprint and Sprintln	:
-	3.5. Srpintf method		:
-	3.6. Getting User Input		:
-4. CONDITIONALS-------------------------:
-	4.1. The if Statement		:
-	4.2. The else statement		:
-	4.3. The else if statement	:	
-	4.4. The switch statement	:
-	4.5. Comparison Operators	:
-	4.6. Logical Operators (And, Or):
-	4.7. Scoped Short Declaration 	:
-	4.8. Randomizing		:
-	4.9. Seeding			:
-5. FUNCTIONS----------------------------:
-	5.1.
-	5.2.
-	5.3.
-	5.4.
-	5.5.
-	5.6.
-	5.7.
-6. ADDRESSES AND POINTERS---------------:
-	6.1.
-	6.2.
-	6.3.
-	6.4.
----------------
-1. GET STARTED
----	1. Basic:
-		1st line- package declaration: create an executable or library 
-			$package main
+- Source: codecademy.com
+- Course: Learn Go
+- Year: 2022
 
-		2nd line- import statement: bring in and use code from other packages. Use " ". 
-			$import "fmt" #importing the fmt package
+**TOPICS**
 
----	2. 	$go build main.go
-		$./ main
-
----	3. $go run main.go
-
----	4. Functions:
-		$func [name] (){
+1. GETTING STARTED	
+- I will introducE the basic of GO. For more information, please click on: https://go.dev/doc/ to visit the Go's mainpage
+	- Basic:
+		+ First line: Package Declaration - create an executable or library
+			```
+			package main
+			```
+		+ Second line: Bringing in and using code from other packages. Use " ". 
+			```	
+			import "fmt" //importing the fmt package
+			```
+	- Running Go project:
+		+ There are two ways to run Go file:
+			* 1st way:
+				```
+				go build main.go //compile Go 
+				./ main //run the compiled file
+				```
+			* 2nd way:
+				```
+ 				go run main.go //Compile and Run the file
+				```
+	- Functions:
+		+ Format of function:
+		 	```
+			func [NameOfFunction] (){
 			fmt.Println("Hello World")}
+			```
+ 	- Importing multiple packages:
+		+ More packages: https://pkg.go.dev/std
+			```
+			import (
+				"package1"
+				"package2"
+			)//each package is seperated by LINE, not by any special characters.
+			```
+		+ Using ALIAS 
+			```
+			import (p1 "package1") //p1 is an ALIAS.
+			```
+ 	- Comments
+		+ // This is a comment
+		+ /* This is a block comment */
+ 	- Go Resources: 
+ 	 	+ https://go.dev/
+		+ We can also look up Go document by typing **go doc [package_name]**
+			```
+			go doc fmt.Println //It will return the whole docs of Println
+			```
+---
+2. VARIABLES, VALUES, AND FORMATING</summary>
+- Next, I will introduct Variable, Values and Fomarting
+	- Literals: numbers, strings, etc.
+		+ add (+), substract (-), multiply (*), divide (/), remainder (%)
+			```	
+			fmt.Println(2*3) //6
+			```	
 
----	5. Importing multiple packages:
-		More packages: https://pkg.go.dev/std
-		$import (
-			"package1"
-			"package2"
-		)#each package is seperated by LINE, not by any special characters.
+	- Constants cannot be UPDATED when the program is RUNNING
+		```
+		constconst funcFact = "1+1=2"
+		fmt.Println(funFact) //Prints: 2
+		```
 
-		$import (
-		p1 "package1") #p1 is an ALIAS.
-
----	6. Comments
-		$// This is a comment
-		$/* This is a block comment */
-
-	8. Go Resources: https://go.dev/
-		$go doc [package_name]
-		$go doc fmt.Println
-
-2. VARIABLES, VALUES, AND FORMATING
----	1. Literals: numbers, strings, etc.
-		- add (+), substract (-), multiply (*), divide (/), remainder (%)
-			$fmt.Println(2*3) //6
+	- Data Type: THREE basic catagories for NUMBERS:
+		+ int
+		+ float
+		+ complex
 	
----	2. Constants: can't be UPDATED when the program is RUNNING
-		- const
-			$const funcFact = "1+1=2"
-			$fmt.Println(funFact) 
+	- Basic Numeric Types in Go: 
+	 	+ 15 different numeric types
+		+ Clikc here for more information: https://go.dev/ref/spec#Numeric_types
 	
----	3. Data Type: THREE basic catagories for NUMBERS:
-		- int
-		- float
-		- complex
+	- Variables: 
+		+ Can change during the running of a program
+		+ ```var [prefered_name] [type]```
+			```	
+			var lengthOfSong uint16
+			```	
+	- Reading Errors
+		+ Format: ./[package_name]:[line_number]:[column_number]
+		+ ```./main.go:4:7: numberWheels declared and not used```
 	
----	4. Basic Numeric Types in Go: 15 different numeric types
-		- https://go.dev/ref/spec#Numeric_types
-	
----	5. Variables: Can change during the running of a program
-		- var [prefered_name] [type]
-		$var lengthOfSong uint16
-	
----	6. Reading Errors
-		- Format: ./[package_name]:[line_number]:[column_number]
-			- Example:./main.go:4:7: numberWheels declared and not used
-	
----	7. Assigning Variables:
-		- Variables are placeholder names
-		- updating variables is called ASSIGNING a value to variable
-		- Use "=" to assign value to variable
-			- Example: 
-				$var kilometersToMars int32 //declaring to variable
-				$kilometerToMars = 62100000 //assigning value to that variable
-		- OR: $var kilometersToMars int32= = 61200000
-	
----	8. String: 
-		- A signe quote ' cannot be used to define strings.
-		$var myfavoriteFood string = "Pho"
-		$fmt.Println("My favorite food is " + myfavoriteFood) //My favorite food is Pho
+	- Assigning Variables:
+		+ Variables are placeholder names
+		+ Updating variables is called **ASSIGNING** a value to variable
+		+ Use "=" to assign value to variable
+			```
+			var kilometersToMars int32 //declaring to variable
+			kilometerToMars = 62100000 //assigning value to that variable
+			```	
+		+ OR: 
+			```
+		 	var kilometersToMars int32= = 61200000
+			```		
+	- String: 
+		+ A signe quote ' cannot be used to define strings.
+			```
+			var myfavoriteFood string = "Pho"
+			fmt.Println("My favorite food is " + myfavoriteFood) //Prints: My favorite food is Pho
+			```
+	- Zero Values:
+		+ All numeric var have a value of 0 BEFORE assignment
+			```
+			var emptyFloat float32 
+			fmt.Println(emptyFloat) //Prints: 0
+			```
+		+ String var have a default value of " ", or can be called **an empty string**
+		+ Boolean var have a default value of FALSE
 
----	9. Zero Values:
-		- All numeric var have a value of 0 BEFORE assignment
-			$var emptyFloat float32 
-			$fmt.Println(emptyFloat) //0
-		- String var have a default value of "" - empty string
-		- Boolean var have a default value of FALSE
+	- Inferring Type:
+		+ `:=` is used to create the var and infer its type based on the VALUE PROVIDE
+			```
+			workTomorrow := true //boolean value assigned
+			```
+		+ There are **two ways** of inferring type:
+			`friendName := "SizC"` or
+			`var friendName = "SizC"`
+		+ Checking type of a variable:  ```fmt.Printf("Type is: %T", [variable])```
 
----	10. Inferring Type:
-		- := is used to create the var and infer its type based on the VALUE PROVIDE
-			$workTomorrow := true //boolean value assigned
-		- There are two ways of inferring type:
-			1.$friendName := "Trannnn"
-			2.$var friendName = "Trannnn"
-		- Checking type: fmt.Printf("Type is: %T", [variable]) 
+	- Default int Type:
+		+int vs. uint (unsigned integer)
 
----	11. Default int Type:
-		- int vs. uint (unsigned integer)
+	- Updating Variables:
+		+ `+=`: to add from the var
+		+ `-+`: to substract from the var
+		+ `*=`: to multiply the var by a factor
+		+ `/=`: to divide the var by a dividend
+		+ Example 1:
+			```
+			command := "Hold"
+			person := "me!"
+			command += person
+			fmt.Println (command) //Hold me!
+			```
+		+ Example 2:
+			```
+			$coolSneakers := 65.99
+			niceNecklace := 45.50
+			var taxCalculation float64
+			taxCalculation += coolSneakers
+			taxCalculation += niceNecklace
+			// Compute the NYC sales tax
+			// 8.875% of the purchase here:
+			taxCalculation *= 0.08875
+			fmt.Println("Purchase of", coolSneakers + niceNecklace, "with 8.875% sales tax", taxCalculation, "equal to", coolSneakers + niceNecklace + taxCalculation)
+			```
 
----	12. Updating Variables:
-		- +=: to add from the var
-		- -+: to substract from the var
-		- *=: to multiply the var by a factor
-		- /= to divide the var by a dividend
-			-Example1
-				$command := "Hold"
-				$person := "me!"
-				$command += person
-				$fmt.Println (command) //Hold me!
-				--------------
-			-Example 2:
-				$coolSneakers := 65.99
-				$niceNecklace := 45.50
-				$var taxCalculation float64
-				$taxCalculation += coolSneakers
-				$taxCalculation += niceNecklace
-				// Compute the NYC sales tax
-				// 8.875% of the purchase here:
-				$taxCalculation *= 0.08875
-				$fmt.Println("Purchase of", coolSneakers + niceNecklace, "with 8.875% sales tax", taxCalculation, "equal to", coolSneakers + niceNecklace + taxCalculation)
-
----	13. Multiple var Declaration:
-		$var part1, part2 string //both are strings
-		$quote, fact := "The sun is bigger than the moon", true //string, boolean
-
+	- Multiple var Declaration:
+		+ We can combine all the variable with the same type or different types in one line
+			```
+			var part1, part2 string //both are strings. Same type.
+			quote, fact := "The sun is bigger than the moon", true //string, boolean. Different type.
+			```
+---
 3. FMT PACKAGES
----	1. The Print method:
+	1. The Print method:
 		$fmt.Println() //Print in line, line break
 		$fmt.Print() //No line break
 			- Example 1:
@@ -189,7 +170,7 @@ Year  					: 2022
 				$fmt.Print("How","are","you?") //Howareyou?
 				$fmt.Println("How", "are", "you?") //How are you?
 
----	2. The Prinf method with %v:
+	2. The Prinf method with %v:
 		- %v is a place holder - verb in Golang
 			- Example:
 				$food := "Pho"
@@ -197,7 +178,7 @@ Year  					: 2022
 				$fmt.Printf("Your %v costs %v", food, price) //Your Pho costs $12.99
 				//If we swap the arguemtns: pho and price, the result will change.
 
----	3. Different Verbs:
+	3. Different Verbs:
 		- Different other verbs: https://pkg.go.dev/fmt#hdr-Printing
 		- %T - checking the type of selected agurment
 			$floatExample := 1.75
@@ -209,17 +190,17 @@ Year  					: 2022
 		- %f - can limit how percise we want the value to be 
 		- %.2f - 2 decimal point (price)
 	
----	4. Sprint and Sprintln:
+	4. Sprint and Sprintln:
 		- These methods fmt.Sprint()-no space- & fmt.Sprintln()-inclusing space- format not print out the statement
 			- Example:
 				$name:= "Tran"
 				$iSay := fmt.Sprint("This is ", name)
 				$fmt.Print(iSay) //This is Tran
 	
----	5. Srpintf method:
+	5. Srpintf method:
 		- Works as the Printf method
 		
----	6. Getting User Input:
+	6. Getting User Input:
 		- fmt.Scan(): allows to get user input
 			- Example:
 				$var response1 string 
@@ -229,23 +210,23 @@ Year  					: 2022
 				$fmt.Printf("I'm %v %v", response1, response2)
 
 4. CONDITIONALS
----	1. The if Statement:
+	1. The if Statement:
 		$if [condition := true] { Result follows by conditions }
 		
----	2. The else statement:
+	2. The else statement:
 		- provide another result based on the conditon
 		$if [condition := true] {Result 1} else {Rersult 2}
 		
----	3. The else if statement:
+	3. The else if statement:
 		$if condition1 { Result 1} else if condition2 { Result 2 } else condtion3 { Result 3 }
 		
----	4. The switch statement:
+	4. The switch statement:
 		$switch condition {
 		$	case "a" or 1:
 		$	case "b" or 2: 
 		$	default: } 
 		
----	5. Comparison Operators:
+	5. Comparison Operators:
 		- Comparison operators are used to check more than 1 condition
 		- == : Is equal to
 		- != : Is NOT equal to
@@ -254,13 +235,13 @@ Year  					: 2022
 		- <= : Less than or equal to
 		- >= : Greater than or equal to
 		
----	6. Logical Operators (And, Or):
+	6. Logical Operators (And, Or):
 		- Check multiple conditons
 		- %% : And
 		- || : Or
 		- !  : Not -> negates (reverses) the value of a boolean
 		
----	7. Scoped Short Declaration Statement:
+	7. Scoped Short Declaration Statement:
 		- if statement:
 			$x := 1
 			$y := 2
@@ -272,14 +253,14 @@ Year  					: 2022
 			$case "summer":
 			$	fmt.Println("Go out and enjoy the sun!")} 
 			
----	8. Randomizing:
+	8. Randomizing:
 		- imporing "math/rand"
 		$fmt.Println(rand.Intn(100)) //If we run the code multiple times, it always return 81
 			- Example
 				$amountLeft := rand.Intn(1000)
 				$fmt.Println("amountLeft is: ", amountLeft) //1081
 			
----	9. Seeding:
+	9. Seeding:
 		- By default, the NEW seed value is 1
 		$rand.Seed([passing an integer])
 *****		Random Num:
@@ -288,14 +269,14 @@ Year  					: 2022
 			$fmt.Println(randomNumber) //it will generate different NUM every time
 
 5. FUNCTIONS
----	1. Using Functions:
+	1. Using Functions:
 		- func [func_name] (parameters?) {do something...}
 		
----	2. Scope:
+	2. Scope:
 		- Is a concept that refers to where the values and functions are defined and where they can accessed
 		- When a var is defined within a function, that var is only asseccible within that funciton.
 		
---- 	3. Returning Values from Functions:
+ 	3. Returning Values from Functions:
 		- When return a value, we pass the value to another place in our code.
 		- A func can be given a RETURN type - the type of returned value.
 			-Example 1:
@@ -307,7 +288,7 @@ Year  					: 2022
 				$	myAge = gettingMyAge()
 				$	fmt.Println(myAge)} //Prints: 18
 				
----	4. Using Func Parameters:
+	4. Using Func Parameters:
 		- Func para are variables that are used within the function to use in some sort of computation or calculation
 		- Arguments are values that we want those parameters to take
 			- Example
@@ -320,7 +301,7 @@ Year  					: 2022
 				$	product = multiplier (A, B)
 				$	fmt.Println(product)} //Prints: 6
 
----	5. Reusing Code with Func:
+	5. Reusing Code with Func:
 		- Make your code shorter and more organized by using func
 			- Example
 				$fmt.Println(5*5)
@@ -330,7 +311,7 @@ Year  					: 2022
 				$func squareNum(x int){
 				$	fmt.Println(x*x) //Prints: 25
 			
----	6. Multiple Return Values:
+	6. Multiple Return Values:
 		- Functions also have ability to return multiple values
 			- Example:
 				$func myExample(x int) (string, int){
@@ -350,21 +331,21 @@ Year  					: 2022
 				$	getString, getNum = myExample(2)}
 				$	fmt.Println(getStringm getNum) //Prints: String 2, 20
 				
----	7. Deferring Resolution:
+	7. Deferring Resolution:
 		- We can delay a func call to THE END oif the CURRENT SCOPE by using DEFER
 		$defer delayFunction() //the delayFunction will execute at the end
 
 6. ADDRESSES AND POINTERS
----	1. Usage of pointers & addresses:
+	1. Usage of pointers & addresses:
 		- The ability to change values from a DIFFERENT SCOPES using: ADDRESSES, POINTERS, DEREFERCING
 		
----	2. Addresses:
+	2. Addresses:
 		- Instead of writting info. down in the memory, it will be SPACE which can be used to store value - ADDRESSES
 		- To find a var's address we use "&" followed by the var name
 			$x := "My very first address"
 			$fmt.Println(&x) //Prints: 0x414020
 			
----	3. Pointers:
+	3. Pointers:
 		- Pointers are used to store value in the specific address
 			$var pointerForInt *int
 				- the "*" signifies that this var will store an address
@@ -374,7 +355,7 @@ Year  					: 2022
 				$starAddress := &star
 				$fmt.Println(starAddress) //Prints: 0xc000010230
 				
----	4. Dereferecing:
+	4. Dereferecing:
 		- We can use our pointer to access the address and change its value. This action is called DEFERECING or INDIRECTING
 			- Example:
 				$lyrics := "Lalala"
@@ -382,7 +363,7 @@ Year  					: 2022
 				$*pointerForLyrics = "Hihihi"
 				$fmt.Println(lyrics) //Prints: Hihihi
 				
----	5.Changing Values in Different Scopes:
+	5.Changing Values in Different Scopes:
 			-Example:
 				$func addHundred (numPtr *int) {
 				$	*numPtr += 100}
@@ -390,6 +371,6 @@ Year  					: 2022
 				$	x:= 1
 				$	addHundred (&x)
 				$	fmt.Println(x) //Prints 101}		
-----------------------------------------------------------------------------------------------------------------------------------------------------
+
 				
 				
