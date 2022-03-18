@@ -341,7 +341,7 @@
 				fmt.Println(x*x) //Prints: 25
 				```
 	- Multiple Return Values:
-		+Functions also have ability to return multiple values
+		+ Functions also have ability to return multiple values
 			* Example:
 				```
 				func myExample(x int) (string, int){
@@ -361,6 +361,7 @@
 					getString, getNum = myExample(2)}
 					fmt.Println(getStringm getNum) //Prints: String 2, 20
 				```
+				
 	- Deferring Resolution:
 		+ We can delay a func call to THE END oif the **CURRENT SCOPE** by using **DEFER**
 		+ `defer delayFunction()` //the delayFunction will execute at the end
@@ -406,6 +407,6 @@
 				x:= 1
 				addHundred (&x)
 				fmt.Println(x) //Prints 101}		
-			``
+			```
 				
 				
