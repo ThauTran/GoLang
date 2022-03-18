@@ -171,7 +171,7 @@ I am very happy to share some basic things about Go. I leanred it from www.codec
 			var part1, part2 string //both are strings. Same type.
 			quote, fact := "The sun is bigger than the moon", true //string, boolean. Different type.
 			```
-			
+---			
 ### `3. FMT PACKAGES`
 - We use `fmt` to implement needed packages
 	- The `Print` method:
@@ -234,7 +234,7 @@ I am very happy to share some basic things about Go. I leanred it from www.codec
 				fmt.Scan(&response2)
 				fmt.Printf("I'm %v %v", response1, response2)
 				```
-
+---
 ### `4. CONDITIONALS`
 - Need to set condition for your code? Let's jump into the conditional statement
 	- The `if` statements:
@@ -302,7 +302,7 @@ I am very happy to share some basic things about Go. I leanred it from www.codec
 			randomNumber := rand.Intn(100)
 			fmt.Println(randomNumber) //it will generate different NUM every time
 			```
-
+---
 ### `5. FUNCTIONS`
 - Now, keep moving with Function
 	- Using Functions:
@@ -377,7 +377,7 @@ I am very happy to share some basic things about Go. I leanred it from www.codec
 	- Deferring Resolution:
 		+ We can delay a func call to THE END oif the **CURRENT SCOPE** by using **DEFER**
 		+ `defer delayFunction()` //the delayFunction will execute at the end
-
+---
 ### `6. ADDRESSES AND POINTERS`
 - One last thing...
 	- Usage of pointers & addresses:
