@@ -1,21 +1,20 @@
-- Source: codecademy.com
+# `Intro`
+- **Source**: codecademy.com
 - Course: Learn Go
 - Year: 2022
----
-`whatisit:` 
+
+## `whatisit:` 
 I am very happy to share some basic things about Go. I leanred it from www.codecademy.com. It is a great website to learn and test your knowldege with a lot of projects. This file only includes basic concepts about Go which you can also find every where on Google. However, I used this file as my source of learning , and as "my cheat sheet" for future usage. I will continue updating more stuff related to Cybersecurity with Go.  
 
+## `WHAT IS INSIDE THIS FILE?`
+- [Getting started with Go](#getting-started-with-go)
+- [Variable, Values, and Formatting](#)
+- [Fmt Packages](#)
+- [Conditionals](#)
+- [Functions](#)
+- [Addresses and Pointers](#)
 ---
-`WHAT IS INSIDE THIS FILE?`
-- Getting started with Go
-- Variable, Values, and Formatting
-- Fmt Packages
-- Conditionals
-- Functions
-- Addresses and Pointers
-
----
-1. GETTING STARTED WITH GO	
+### `1. GETTING STARTED WITH GO`
 - I will introducE the basic of GO. For more information, please click on: https://go.dev/doc/ to visit the Go's mainpage
 	- Basic:
 		+ First line: Package Declaration - create an executable or library
@@ -65,7 +64,7 @@ I am very happy to share some basic things about Go. I leanred it from www.codec
 			go doc fmt.Println //It will return the whole docs of Println
 			```
 ---
-2. VARIABLES, VALUES, AND FORMATING
+### `2. VARIABLES, VALUES, AND FORMATING`
 - Next, I will introduct Variable, Values and Fomarting
 	- Literals: numbers, strings, etc.
 		+ add (+), substract (-), multiply (*), divide (/), remainder (%)
@@ -174,7 +173,7 @@ I am very happy to share some basic things about Go. I leanred it from www.codec
 			quote, fact := "The sun is bigger than the moon", true //string, boolean. Different type.
 			```
 ---
-3. FMT PACKAGES
+### `3. FMT PACKAGES`
 	- The `Print` method:
 		```
 		fmt.Println() //Print in line, line break
@@ -236,7 +235,7 @@ I am very happy to share some basic things about Go. I leanred it from www.codec
 				fmt.Printf("I'm %v %v", response1, response2)
 				```
 ---
-4. CONDITIONALS
+### `4. CONDITIONALS`
 	- The `if` statements:
 		+ `if [condition := true]` { Result follows by conditions }
 		
@@ -303,7 +302,7 @@ I am very happy to share some basic things about Go. I leanred it from www.codec
 			fmt.Println(randomNumber) //it will generate different NUM every time
 			```
 ---
-5. FUNCTIONS
+### `5. FUNCTIONS`
 	- Using Functions:
 		func `func_name` `(parameters if needed)` {do something...}
 		
@@ -341,7 +340,7 @@ I am very happy to share some basic things about Go. I leanred it from www.codec
 	- Reusing Code with Func:
 		+ Make your code shorter and more organized by using func
 			* Example
-				```
+				```Go
 				fmt.Println(5*5)
 				...
 				fmt.Println(10*10)
@@ -377,7 +376,7 @@ I am very happy to share some basic things about Go. I leanred it from www.codec
 		+ We can delay a func call to THE END oif the **CURRENT SCOPE** by using **DEFER**
 		+ `defer delayFunction()` //the delayFunction will execute at the end
 ---
-6. ADDRESSES AND POINTERS
+### 6. ADDRESSES AND POINTERS
 	- Usage of pointers & addresses:
 		+ The ability to change values from a **DIFFERENT SCOPES** using: ADDRESSES, POINTERS, DEREFERCING
 		
@@ -411,7 +410,7 @@ I am very happy to share some basic things about Go. I leanred it from www.codec
 				```
 	- Changing Values in Different Scopes:
 		+ Example:
-			```
+			```Go
 			func addHundred (numPtr *int) {
 				*numPtr += 100}
 			func main() {
