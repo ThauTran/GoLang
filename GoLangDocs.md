@@ -7,7 +7,7 @@
 I am very happy to share some basic things about Go. I leanred it from www.codecademy.com. It is a great website to learn and test your knowldege with a lot of projects. This file only includes basic concepts about Go which you can also find every where on Google. However, I used this file as my source of learning , and as "my cheat sheet" for future usage. I will continue updating more stuff related to Cybersecurity with Go.  
 
 ## `WHAT IS INSIDE THIS FILE?`
-- [Getting started with Go](#getting-started-with-go)
+- [Getting started with Go](#1-getting-started-with-go)
 - [Variable, Values, and Formatting](#variable-value-and-formatting)
 - [Fmt Packages](#fmt--package)
 - [Conditionals](#Conditionals)
