@@ -1,10 +1,21 @@
 - Source: codecademy.com
 - Course: Learn Go
 - Year: 2022
+---
+`whatisit:` 
+I am very happy to share some basic things about Go. I leanred it from www.codecademy.com. It is a great website to learn and test your knowldege with a lot of projects. This file only includes basic concepts about Go which you can also find every where on Google. However, I used this file as my source of learning , and as "my cheat sheet" for future usage. I will continue updating more stuff related to Cybersecurity with Go.  
 
-**TOPICS**
+---
+`WHAT IS INSIDE THIS FILE?`
+- Getting started with Go
+- Variable, Values, and Formatting
+- Fmt Packages
+- Conditionals
+- Functions
+- Addresses and Pointers
 
-1. GETTING STARTED	
+---
+1. GETTING STARTED WITH GO	
 - I will introducE the basic of GO. For more information, please click on: https://go.dev/doc/ to visit the Go's mainpage
 	- Basic:
 		+ First line: Package Declaration - create an executable or library
@@ -54,7 +65,7 @@
 			go doc fmt.Println //It will return the whole docs of Println
 			```
 ---
-2. VARIABLES, VALUES, AND FORMATING</summary>
+2. VARIABLES, VALUES, AND FORMATING
 - Next, I will introduct Variable, Values and Fomarting
 	- Literals: numbers, strings, etc.
 		+ add (+), substract (-), multiply (*), divide (/), remainder (%)
@@ -164,7 +175,7 @@
 			```
 ---
 3. FMT PACKAGES
-	- The Print method:
+	- The `Print` method:
 		```
 		fmt.Println() //Print in line, line break
 		fmt.Print() //No line break
@@ -179,7 +190,7 @@
 			fmt.Print("How","are","you?") //Howareyou?
 			fmt.Println("How", "are", "you?") //How are you?
 			```
-	- The Prinf method with %v:
+	- The `Printf` method with %v:
 		+ `%v` is a place holder - verb in Golang
 			* Example:
 				```
@@ -203,7 +214,7 @@
 			%f - can limit how percise we want the value to be 
 			%.2f - 2 decimal point (price)
 			```
-	- Sprint and Sprintln:
+	- `Sprint` and `Sprintln`:
 		+ These methods `fmt.Sprint()`-no space- & `fmt.Sprintln()`-inclusing space- format not print out the statement
 			* Example:
 				```
@@ -211,7 +222,7 @@
 				iSay := fmt.Sprint("This is ", name)
 				fmt.Print(iSay) //This is SizC
 				```
-	- Srpintf method:
+	- `Srpintf` method:
 		+ Works as the Printf method
 		
 	- Getting User Input:
