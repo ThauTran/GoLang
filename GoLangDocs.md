@@ -8,11 +8,11 @@ I am very happy to share some basic things about Go. I leanred it from www.codec
 
 ## `WHAT IS INSIDE THIS FILE?`
 - [Getting started with Go](#getting-started-with-go)
-- [Variable, Values, and Formatting](#)
-- [Fmt Packages](#)
-- [Conditionals](#)
-- [Functions](#)
-- [Addresses and Pointers](#)
+- [Variable, Values, and Formatting](#variable-value-and-formatting)
+- [Fmt Packages](#fmt--package)
+- [Conditionals](#Conditionals)
+- [Functions](#Functions)
+- [Addresses and Pointers](#Addresses-and-Pointers)
 
 ### `1. GETTING STARTED WITH GO`
 - I will introducE the basic of GO. For more information, please click on: https://go.dev/doc/ to visit the Go's mainpage
